@@ -9,9 +9,9 @@ import {
   SidebarTrigger,
 } from "~/components/ui/sidebar";
 import { Separator } from "~/components/ui/separator";
-import AppSidebar from "~/components/sidebar/AppSidebar";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList } from "~/components/ui/breadcrumb";
 import BreadcrumbPageClient from "~/components/sidebar/BreadcrumbPageClient";
+import { AppSidebar } from "~/components/sidebar/AppSidebar";
 
 export const metadata: Metadata = {
   title: "AI Image Editor",
