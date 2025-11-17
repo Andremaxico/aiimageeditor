@@ -7,14 +7,13 @@ import { db } from "~/server/db";
 import { env } from "~/env";
 // If your Prisma file is located elsewhere, you can change the path
 
-console.log('polar access token', env.POLAR_ACCESS_TOKEN)
-
 const polarClient = new Polar({
     accessToken: env.POLAR_ACCESS_TOKEN,
     server: 'sandbox'
 });
 
 const prisma = new PrismaClient();
+
 export const auth = betterAuth({
     emailAndPassword: { 
         enabled: true, 
@@ -49,6 +48,7 @@ export const auth = betterAuth({
                 webhooks({
                     secret: env.POLAR_WEBHOOK_SECRET!,
                     onOrderPaid: async (order) => {
+                        console.log('order paid')
                         const externalCustomerId = order.data.customer.externalId;
 
                         if (!externalCustomerId) {
@@ -61,13 +61,13 @@ export const auth = betterAuth({
                         let creditsToAdd = 0;
 
                         switch (productId) {
-                            case "215197d3-8ef2-44cb-92cf-7ff67e9382e9":
+                            case "2be06783-3683-4ac6-b671-d10251fa8555":
                                 creditsToAdd = 50;
                                 break;
-                            case "ab3f61e7-d70a-4f9a-8b8b-e41883d92002clear":
+                            case "69ac6756-f0ed-48f5-9b7f-7dfbbb006f23":
                                 creditsToAdd = 200;
                                 break;
-                            case "e4e75526-e776-483f-9ff3-5b65f8ff520e":
+                            case "2be06783-3683-4ac6-b671-d10251fa8555":
                                 creditsToAdd = 500;
                                 break;
                         }
