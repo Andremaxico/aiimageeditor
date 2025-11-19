@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { betterAuth } from "better-auth";
+import { betterAuth, logger } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { Polar } from "@polar-sh/sdk";
 import { checkout, polar, portal, webhooks } from "@polar-sh/better-auth";
@@ -37,7 +37,7 @@ export const auth = betterAuth({
                             slug: "medium",
                         },
                         {
-                            productId: "2be06783-3683-4ac6-b671-d10251fa8555",
+                            productId: "88b320da-551c-4c61-85dc-64d467a504e8",
                             slug: "large",
                         },
                     ],
@@ -48,8 +48,7 @@ export const auth = betterAuth({
                 webhooks({
                     secret: env.POLAR_WEBHOOK_SECRET!,
                     onOrderPaid: async (order) => {
-                        console.log('order paid')
-                        const externalCustomerId = order.data.customer.externalId;
+                        const externalCustomerId = order.data.customer.externalId
 
                         if (!externalCustomerId) {
                             console.error("No external customer ID found.");
@@ -67,7 +66,7 @@ export const auth = betterAuth({
                             case "69ac6756-f0ed-48f5-9b7f-7dfbbb006f23":
                                 creditsToAdd = 200;
                                 break;
-                            case "2be06783-3683-4ac6-b671-d10251fa8555":
+                            case "88b320da-551c-4c61-85dc-64d467a504e8":
                                 creditsToAdd = 500;
                                 break;
                         }
