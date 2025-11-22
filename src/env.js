@@ -13,6 +13,9 @@ export const env = createEnv({
     POLAR_ACCESS_TOKEN: z.string(),
     // POLAR_SUCCESS_URL: z.string(),
     POLAR_WEBHOOK_SECRET: z.string(),
+    IMAGEKIT_PUBLIC_KEY: z.string(),
+    IMAGEKIT_PRIVATE_KEY: z.string(),
+    IMAGEKIT_URL: z.string().url(),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
@@ -37,6 +40,9 @@ export const env = createEnv({
     BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
     BETTER_AUTH_URL: process.env.BETTER_AUTH_URL,
     POLAR_ACCESS_TOKEN: process.env.POLAR_ACCESS_TOKEN,
+    IMAGEKIT_PRIVATE_KEY: process.env.IMAGE_KIT_PRIVATE_KEY,
+    IMAGEKIT_URL: process.env.NEXT_PUBLIC_IMAGEKIT_URL,
+    IMAGEKIT_PUBLIC_KEY: process.env.NEXT_PUBLIC_IMAGEKIT_PUBLIC_KEY,
     // POLAR_SUCCESS_URL: process.env.POLAR_SUCCESS_URL,
     POLAR_WEBHOOK_SECRET: process.env.POLAR_WEBHOOK_SECRET,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,

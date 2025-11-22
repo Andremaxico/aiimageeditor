@@ -223,6 +223,18 @@
   resolved "https://registry.npmjs.org/@humanwhocodes/retry/-/retry-0.4.3.tgz"
   integrity sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==
 
+"@imagekit/javascript@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@imagekit/javascript/-/javascript-5.1.0.tgz#3027f3e3a838d883107161d6434fb8f45df39dd9"
+  integrity sha512-P12NaxlO6Qu4GROFagX9qgP5kKde236mCu5jJB1cWJ6mPaVdjyk0Mw3ciGIWdKXST/jP1cFqS2ZoBVRSq1SWow==
+
+"@imagekit/next@^2.1.3":
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/@imagekit/next/-/next-2.1.3.tgz#09aa173fe4a380d9231ef5d80520c53ce74f9caf"
+  integrity sha512-fN3X3NjhSBYh1tlV0itkV+F6EBAVaYqy/BTrDOMWRkSyryBhSzGh6RtJJHXy/X9cdyjpWDGTPy4Jxa/Bu+VSHw==
+  dependencies:
+    "@imagekit/javascript" "^5.1.0"
+
 "@img/colour@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@img/colour/-/colour-1.0.0.tgz"
