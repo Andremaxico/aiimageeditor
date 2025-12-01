@@ -2,7 +2,7 @@
 import { getUploadAuthParams } from "@imagekit/next/server"
 import { env } from "~/env"
 
-const GET = async () => {
+export const GET = async () => {
     // Your application logic to authenticate the user
     // For example, you can check if the user is logged in or has the necessary permissions
     // If the user is not authenticated, you can return an error response
@@ -14,7 +14,7 @@ const GET = async () => {
             // token: "random-token", // Optional, a unique token for request
         })
 
-        return Response.json({ token, expire, signature, publicKey: process.env.IMAGEKIT_PUBLIC_KEY })
+        return Response.json({ token, expire, signature, publicKey: env.IMAGEKIT_PUBLIC_KEY })
     } catch(error) {
         console.error("Upload auth error", error)
         return Response.json(
